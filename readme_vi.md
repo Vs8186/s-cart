@@ -1,5 +1,5 @@
 <p align="center">
-    <a href="https://gp247.net"><img src="https://static.gp247.net/logo/logo.png" width="150"></a>
+    <a href="https://gp247.net"><img src="https://s-cart.org/logo.png" width="150"></a>
 </p>
 <p align="center">Mã nguồn mở miễn phí cho website thương mại điện tử<br>
     <code><b>composer create-project gp247/s-cart</b></code></p>
