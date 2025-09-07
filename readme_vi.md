@@ -4,7 +4,7 @@
 <p align="center">Mã nguồn mở miễn phí cho website thương mại điện tử<br>
     <code><b>composer create-project gp247/s-cart</b></code></p>
 <p align="center">
- <a href="https://s-gp247.net">Trang chủ</a> | <a href="https://demo.s-cart.org">Demo</a> | <a href="https://gp247.net/en/docs/s-cart/s-cart-overview.html">Tài liệu</a>  | <a href="https://www.facebook.com/groups/scart.opensource">Nhóm FB</a>
+ <a href="https://gp247.net">Trang chủ</a> | <a href="https://demo.s-cart.org">Demo</a> | <a href="https://gp247.net/en/docs/s-cart/s-cart-overview.html">Tài liệu</a>  | <a href="https://www.facebook.com/groups/scart.opensource">Nhóm FB</a>
 </p>
 
 <p align="center">

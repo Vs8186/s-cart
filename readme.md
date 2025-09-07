@@ -4,7 +4,7 @@
 <p align="center">Free and open-source eCommerce website<br>
     <code><b>composer create-project gp247/s-cart</b></code></p>
 <p align="center">
- <a href="https://s-gp247.net">Homepage</a> | <a href="https://demo.s-cart.org">Demo</a> | <a href="https://gp247.net/en/docs/s-cart/s-cart-overview.html">Documentation</a>  | <a href="https://www.facebook.com/groups/scart.opensource">Facebook Group</a>
+ <a href="https://gp247.net">Homepage</a> | <a href="https://demo.s-cart.org">Demo</a> | <a href="https://gp247.net/en/docs/s-cart/s-cart-overview.html">Documentation</a>  | <a href="https://www.facebook.com/groups/scart.opensource">Facebook Group</a>
 </p>
 
 <p align="center">
