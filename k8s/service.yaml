@@ -1,16 +1,13 @@
-cat > k8s/service.yaml <<'EOF'
 apiVersion: v1
 kind: Service
 metadata:
-  name: scart-service
+  name: s-cart-service
 spec:
-  type: NodePort
   selector:
-    app: scart
-    color: blue
+    app: s-cart
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-      nodePort: 30007
-EOF
+  type: LoadBalancer
+

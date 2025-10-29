@@ -1,23 +1,21 @@
-cat > k8s/deployment-blue.yaml <<'EOF'
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: scart-blue
+  name: s-cart-blue
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: scart
-      color: blue
+      app: s-cart
+      version: blue
   template:
     metadata:
       labels:
-        app: scart
-        color: blue
+        app: s-cart
+        version: blue
     spec:
       containers:
-      - name: scart
-        image: veena1909/scart:latest
-        ports:
-        - containerPort: 80
-EOF
+        - name: s-cart-container
+          image: veena1909/s-cart:latest
+          ports:
+            - containerPort: 80
