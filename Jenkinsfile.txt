@@ -1,0 +1,43 @@
+cat > Jenkinsfile <<'EOF'
+pipeline {
+  agent any
+  environment {
+    DOCKER_USER = 'veena1909'
+    IMAGE = "${DOCKER_USER}/scart:${BUILD_NUMBER}"
+    COLOR = 'green'
+  }
+  stages {
+    stage('Clone Repository') {
+      steps {
+        git 'https://github.com/Vs8186/s-cart.git'
+      }
+    }
+    stage('Build Docker Image') {
+      steps {
+        sh 'docker build -t $IMAGE .'
+      }
+    }
+    stage('Push to Docker Hub') {
+      steps {
+        withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'DOCKER_PASS')]) {
+          sh 'echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin'
+          sh 'docker push $IMAGE'
+        }
+      }
+    }
+    stage('Deploy to Kubernetes') {
+      steps {
+        script {
+          sh 'kubectl set image deployment/scart-$COLOR scart=$IMAGE --record || kubectl apply -f k8s/deployment-$COLOR.yaml'
+        }
+      }
+    }
+    stage('Switch Traffic') {
+      steps {
+        input "Switch service to $COLOR?"
+        sh 'kubectl patch service scart-service -p "{\"spec\": {\"selector\": {\"app\": \"scart\", \"color\": \"$COLOR\"}}}"'
+      }
+    }
+  }
+}
+EOF

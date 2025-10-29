@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scart-blue
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: scart
+      version: blue
+  template:
+    metadata:
+      labels:
+        app: scart
+        version: blue
+    spec:
+      containers:
+        - name: scart
+          image: vs8186/scart-app:v1     # replace with your actual Docker Hub image name
+          ports:
+            - containerPort: 80

@@ -1,0 +1,23 @@
+cat > k8s/deployment-green.yaml <<'EOF'
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scart-green
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scart
+      color: green
+  template:
+    metadata:
+      labels:
+        app: scart
+        color: green
+    spec:
+      containers:
+      - name: scart
+        image: veena1909/scart:latest
+        ports:
+        - containerPort: 80
+EOF
